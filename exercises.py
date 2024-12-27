@@ -64,4 +64,26 @@ for key,val in grades.items():
        
 print(grades)
 
-    
+students = {
+    'Alice': {'Math': 85, 'Science': 92, 'English': 88},
+    'Bob': {'Math': 78, 'Science': 81, 'English': 74},
+    'Charlie': {'Math': 95, 'Science': 89, 'English': 93},
+    'David': {'Math': 62, 'Science': 70, 'English': 65},
+    'Eva': {'Math': 88, 'Science': 90, 'English': 85}
+}
+
+# Calculate the average grade for each student and add it to the dictionary
+for student, grades in students.items():
+    average = sum(grades.values()) / len(grades)
+    students[student]['Average'] = round(average, 2)
+
+# Find the student with the highest average grade using a for loop
+highest_avg_student = None
+highest_avg = 0
+
+for student, grades in students.items():
+    if grades['Average'] > highest_avg:
+        highest_avg = grades['Average']
+        highest_avg_student = student
+
+print(f"\nStudent with the highest average grade: {highest_avg_student}")
